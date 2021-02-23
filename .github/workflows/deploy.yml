@@ -32,7 +32,7 @@ jobs:
       uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
       with:
     # Path of NuPkg
-        nupkg-path: lsls
+        nupkg-path: TeltonikaRMSAPI\bin\Release\TeltonikaRMSAPI.1.0.0.nupkg
     # package repository owner
         repo-owner: GideonLaar
     # user account
