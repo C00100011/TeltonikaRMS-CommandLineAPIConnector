@@ -19,7 +19,6 @@ jobs:
         dotnet-version: 5.0.x
     - name: Build project
       run: |
-        cd TeltonicaRMSAPI
         dotnet build --configuration Release
     - name: Pack a package
       run: dotnet pack --configuration Release
