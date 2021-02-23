@@ -18,9 +18,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: |
-        cd TeltonicaRMSAPI
-        dotnet pack --configuration Release
+      run: dotnet pack --configuration Release
     - name: Publish Nuget package
       uses: myci-actions/publish-nuget@2
       with:
