@@ -1,4 +1,4 @@
-name: Testing
+name: Build and test current commit to master
 
 on:
   push:
