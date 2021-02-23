@@ -21,6 +21,9 @@ jobs:
       run: |
         dotnet build --configuration Release
         ls
+        cd TeltonikaRMSAPI
+        ls
+        
     - name: Pack a package
       run: dotnet pack --configuration Release
     - name: Push Nupkg to GitHub Packages
