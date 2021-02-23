@@ -22,12 +22,18 @@ jobs:
         dotnet build --configuration Release
     - name: Pack a package
       run: dotnet pack --configuration Release
-    - name: Publish Nuget package
-      uses: myci-actions/publish-nuget@2
+    - name: Push Nupkg to GitHub Packages
+  # You may pin to the exact commit or the version.
+  # uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@462b6006e5c90f732d030b0ace2c3e7ee9d550bc
+      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
       with:
-    # nuget package filename, wildcards allowed
-        filename: TeltonikaRMSAPI/bin/Release/*
-    # API key to access the repository
-        api-key: ${{ secrets.GITHUB_TOKEN }}
-    # Nuget repository URL
-        repo-url: https://nuget.pkg.github.com/GideonLaar/index.json
+    # Path of NuPkg
+        nupkg-path: TeltonikaRMSAPI/bin/Release
+    # package repository owner
+        repo-owner: GideonLaar
+    # user account
+        gh-user: GideonLaar
+    # access token
+        token: ${{ secrets.GITHUB_TOKEN }}
+    # skip publishing duplicated package(s)
+        skip-duplicate: true
