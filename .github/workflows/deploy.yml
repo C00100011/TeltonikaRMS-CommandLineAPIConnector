@@ -1,4 +1,4 @@
-name: .NET
+name: Deploy to GitHub Packages
 
 on:
   push:
@@ -20,6 +20,7 @@ jobs:
     - name: Build project
       run: |
         dotnet build --configuration Release
+        ls
     - name: Pack a package
       run: dotnet pack --configuration Release
     - name: Push Nupkg to GitHub Packages
@@ -28,7 +29,7 @@ jobs:
       uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
       with:
     # Path of NuPkg
-        nupkg-path: TeltonikaRMSAPI/bin/Release
+        nupkg-path: lsls
     # package repository owner
         repo-owner: GideonLaar
     # user account
